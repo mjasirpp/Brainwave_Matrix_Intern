@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="mj_jasir">
+    <title>ECommerce Website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Shop-2024</h1>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- search & Category-->
+    <div class="search-filter">
+        <input type="text" id="search-bar" placeholder="Enter Product name...">
+        <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home</option>
+        </select>
+    </div>
+<img src="" style="max-height: fit-content;" alt="">
+    <!-- product Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div id="product-list" class="product-list"></div>
+    </section>
+
+    <!-- cart Section -->
+    <div id="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total"></p>
+        <button id="checkout-button" onclick="checkout()">Checkout Your Products</button>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>Shop-2024. All Rights Reserved.</p>
+    </footer>
+
+    <!-- product details modal -->
+    <div id="product-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleProductModal(false)">&times;</span>
+            <div id="product-details">
+                <img id="product-image" src="" alt="Product Image">
+                <h2 id="product-name"></h2>
+                <p id="product-description"></p>
+                <p id="product-price"></p>
+                <button onclick="addToCart(currentProductId)">Add to Cart</button>
+
+                <!-- Review Section -->
+                <div class="reviews-section">
+                    <h4>Customer Reviews:</h4>
+                    <div id="product-review-list"></div>
+
+                    <textarea id="product-review-text" placeholder="Write your review here..."></textarea>
+                    <div class="rating">
+                        <label>Rating: </label>
+                        <input type="number" id="product-rating-input" min="1" max="5" value="5">
+                    </div>
+                    <button onclick="submitProductReview(currentProductId)">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- checkout modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal(false)">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <label for="card">Credit Card Number:</label>
+                <input type="text" id="card" required>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
